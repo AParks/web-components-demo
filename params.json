@@ -1,0 +1,6 @@
+{
+  "name": "Web Components Demo",
+  "tagline": "Playing around with the styling and the shadow dom",
+  "body": "<html>\r\n  <head></head>\r\n  <body>\r\n    <p id=\"hostElement\"></p>\r\n    <script>\r\n      // create shadow DOM on the <p> element above\r\n      var shadow = document.querySelector('#hostElement').createShadowRoot();\r\n    </script>\r\n  </body>\r\n</html>",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
