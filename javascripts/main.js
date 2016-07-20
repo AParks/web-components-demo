@@ -16,6 +16,13 @@
     function lazyLoadShadowDOM() {
       // create shadow DOM on the <p> element above
       var shadow = document.querySelector('#namespacedPlugin').createShadowRoot();
-      shadow.innerHTML = '<style>@import \'stylesheets/stylesheet.css\'</style><p class="red">Here is some new text with the \'red\' class in the shadow DOM.</p>';
+      
+      // plugin HTML
+      shadow.innerHTML = '<p class="red">Here is some new text with the \'red\' class in the shadow DOM.</p>';
+
+     // import app styles
+      var style = document.createElement('style');
+        style.textContent = "@import 'stylesheets/stylesheet.css'";
+        shadow.prepend(style);
     }
 })();
