@@ -23,6 +23,6 @@
      // import app styles
       var style = document.createElement('style');
         style.textContent = "@import 'stylesheets/stylesheet.css'";
-        shadow.prepend(style);
+        shadow.appendChild(style);
     }
 })();
