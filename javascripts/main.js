@@ -8,6 +8,6 @@
       var e = document.createElement('script');
       e.type = 'text/javascript';
       e.src = 'https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents.js';
-      document.body.appendChild(e);
+      document.head.appendChild(e);
     }
 })();
