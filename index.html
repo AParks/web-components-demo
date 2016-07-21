@@ -3,6 +3,17 @@
     	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   </head>
   <body>
+    <template class="plugin-template">
+      <head>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+      </head>
+      <body>
+        <style>
+          /*.red { color: purple }*/
+        </style>
+        <p class="red">Here is some new text with the \'red\' class in the shadow DOM.</p>
+      </body>
+    </template>
     <p class="red">Here is some text with the 'red' class.</p>
     <p id="namespacedPlugin"></p>
     <script type="text/javascript" src="javascripts/main.js"></script>
