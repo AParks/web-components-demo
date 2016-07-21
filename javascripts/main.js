@@ -3,14 +3,15 @@
         && 'import' in document.createElement('link')
         && 'content' in document.createElement('template')) {
       // platform is good!
-      lazyLoadShadowDOM();
+      window.onload = lazyLoadShadowDOM;
     } else {
       // polyfill the platform!
-      var e = document.createElement('script');
-      e.type = 'text/javascript';
-      e.src = 'https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents.js';
-      e.onload = 'lazyLoadShadowDOM';
-      document.body.appendChild(e);
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = 'https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents.js';
+      script.onload = 'lazyLoadShadowDOM';
+      document.head.appendChild(e);
     }
     
     function lazyLoadShadowDOM() {
