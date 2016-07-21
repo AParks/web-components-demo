@@ -18,7 +18,8 @@
       var shadow = document.querySelector('#namespacedPlugin').createShadowRoot();
       
       // plugin HTML
-      shadow.innerHTML = '<head><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script></head><style>/*.red { color: purple }*/ </style><p class="red">Here is some new text with the \'red\' class in the shadow DOM.</p>';
+      var template = document.querySelector('.plugin-template');
+      shadow.appendChild(document.importNode(template.content, true)); // can also use shadow.innerHTML
 
      // import app styles
       var style = document.createElement('style');
