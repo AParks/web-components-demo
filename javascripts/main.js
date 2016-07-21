@@ -18,7 +18,7 @@
       var shadow = document.querySelector('#namespacedPlugin').createShadowRoot();
       
       // plugin HTML
-      shadow.innerHTML = '<style>.red { color: purple } </style><p class="red">Here is some new text with the \'red\' class in the shadow DOM.</p>';
+      shadow.innerHTML = '<style>/*.red { color: purple }*/ </style><p class="red">Here is some new text with the \'red\' class in the shadow DOM.</p>';
 
      // import app styles
       var style = document.createElement('style');
