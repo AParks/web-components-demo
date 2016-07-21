@@ -4,7 +4,7 @@
         && 'content' in document.createElement('template')) {
       // platform is good!
       window.onload = function() {
-          createShadowRoot();
+          var shadow = createShadowRoot();
           // import app styles
           var style = document.createElement('style');
           style.textContent = "@import 'stylesheets/stylesheet.css'";
