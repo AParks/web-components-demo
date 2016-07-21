@@ -12,7 +12,7 @@
           // imports are loaded and elements have been registered
           console.log('Components are ready');
           var shadowRoot = createShadowRoot();
-          WebComponents.ShadowCSS.shimStyling( shadowRoot, '#namespacedPlugin' );
+          //WebComponents.ShadowCSS.shimStyling( shadowRoot, '#namespacedPlugin' );
       });
     }
     
