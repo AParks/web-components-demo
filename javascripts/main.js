@@ -5,7 +5,7 @@
       // platform is good!
     } else {
       // polyfill the platform!
-      var script = "<script type='text/javascript' src='javascripts/webcomponents.js'></script>";
+      var script = "<script type='text/javascript' src='bower_components/webcomponentsjs/webcomponents.js'></script>";
       document.write(script);
     }
     
