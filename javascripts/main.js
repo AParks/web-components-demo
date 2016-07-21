@@ -18,8 +18,8 @@
       shadow.appendChild(document.importNode(template.content, true)); // can also use shadow.innerHTML
 
      // import app styles
-      var style = document.createElement('style');
-        style.textContent = "@import 'stylesheets/stylesheet.css'";
-        shadow.insertBefore(style, shadow.childNodes[0]);
+      //var style = document.createElement('style');
+        //style.textContent = "@import 'stylesheets/stylesheet.css'";
+        //shadow.insertBefore(style, shadow.childNodes[0]);
     };
 })();
