@@ -11,7 +11,7 @@
       script.async = true;
       script.src = 'https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents.js';
       script.onload = 'lazyLoadShadowDOM';
-      document.head.appendChild(e);
+      document.head.appendChild(script);
     }
     
     function lazyLoadShadowDOM() {
