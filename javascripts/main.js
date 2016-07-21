@@ -6,12 +6,8 @@
       window.onload = lazyLoadShadowDOM;
     } else {
       // polyfill the platform!
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.defer = true;
-      script.src = 'https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents.js';
-      script.onload = 'lazyLoadShadowDOM';
-      document.head.appendChild(script);
+      var script = "<script type='text/javascript' src='https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents.js' onload='lazyLoadShadowDOM'></script>";
+      document.write(script);
     }
     
     function lazyLoadShadowDOM() {
