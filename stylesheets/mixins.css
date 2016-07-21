@@ -1,26 +1,19 @@
 :root {
-  --webkit-default: #aaa;
-  --webkit-primary: #3a7297;
-  --webkit-white: white;
-  --webkit-success: #70a93a;
-  --webkit-warning: #9c9425;
-  
-  --webkit-pill {
+  --default: #aaa;
+  --primary: #3a7297;
+  --success: #70a93a;
+  --warning: #9c9425;
+}
+
+.pill {
     display: inline-block;
     line-height: 0.75rem;
     vertical-align: baseline;
-    background-color: var(--webkit-primary);
+    background-color: var(--primary);
     font-size: 0.75rem;
     color: #f9f9f9;
     cursor: default;
     padding: 4px 8px;
     border-radius: 9px;
     margin-left: 15px;
-  }
-}
-
-
-  
-.pill {
- @apply(--webkit-pill);
 }
