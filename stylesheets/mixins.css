@@ -6,19 +6,19 @@
   --warning: #9c9425;
 }
 
-.pill {
-
-  --pill {
-    display: inline-block;
-    line-height: 0.75rem;
-    vertical-align: baseline;
-    background-color: var(--primary);
-    font-size: 0.75rem;
-    color: #f9f9f9;
-    cursor: default;
-    padding: 4px 8px;
-    border-radius: 9px;
-    margin-left: 15px;
-  }
+@mixin .pill {
+  display: inline-block;
+  line-height: 0.75rem;
+  vertical-align: baseline;
+  background-color: var(--primary);
+  font-size: 0.75rem;
+  color: #f9f9f9;
+  cursor: default;
+  padding: 4px 8px;
+  border-radius: 9px;
+  margin-left: 15px;
+}
   
+.pill {
+ include .pill;
 }
