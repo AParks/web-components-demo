@@ -1,15 +1,15 @@
 :root {
-  --default: #aaa;
-  --primary: #3a7297;
-  --white: white;
-  --success: #70a93a;
-  --warning: #9c9425;
+  --webkit-default: #aaa;
+  --webkit-primary: #3a7297;
+  --webkit-white: white;
+  --webkit-success: #70a93a;
+  --webkit-warning: #9c9425;
   
-  --pill {
+  --webkit-pill {
     display: inline-block;
     line-height: 0.75rem;
     vertical-align: baseline;
-    background-color: var(--primary);
+    background-color: var(--webkit-primary);
     font-size: 0.75rem;
     color: #f9f9f9;
     cursor: default;
@@ -22,5 +22,5 @@
 
   
 .pill {
- @apply(--pill);
+ @apply(--webkit-pill);
 }
