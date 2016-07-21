@@ -3,15 +3,13 @@
         && 'import' in document.createElement('link')
         && 'content' in document.createElement('template')) {
       // platform is good!
-      window.onload = lazyLoadShadowDOM;
     } else {
       // polyfill the platform!
-      var script = "<script type='text/javascript' src='https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents.js' onload='lazyLoadShadowDOM'></script>";
+      var script = "<script type='text/javascript' src='https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents.js'></script>";
       document.write(script);
     }
     
-    function lazyLoadShadowDOM() {
-        console.log('create shadow root');
+    window.onload = function() {
       // create shadow DOM on the <p> element above
       var shadow = document.querySelector('#namespacedPlugin').createShadowRoot();
       
@@ -23,5 +21,5 @@
       var style = document.createElement('style');
         style.textContent = "@import 'stylesheets/stylesheet.css'";
         shadow.insertBefore(style, shadow.childNodes[0]);
-    }
+    };
 })();
