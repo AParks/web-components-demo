@@ -8,7 +8,7 @@
       // polyfill the platform!
       var script = document.createElement('script');
       script.type = 'text/javascript';
-      script.async = true;
+      script.defer = true;
       script.src = 'https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents.js';
       script.onload = 'lazyLoadShadowDOM';
       document.head.appendChild(script);
