@@ -15,6 +15,7 @@
     }
     
     function lazyLoadShadowDOM() {
+        console.log('create shadow root');
       // create shadow DOM on the <p> element above
       var shadow = document.querySelector('#namespacedPlugin').createShadowRoot();
       
