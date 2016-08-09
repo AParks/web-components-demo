@@ -33,11 +33,12 @@
         }
         /*.red { color: purple }*/
       </style>
-      <button class="pill" ng-click="count = count + 1" ng-init="count=0">  Increment</button>
-      count: {{count}}
-      <p class="red">Here is some shadow text with the 'red' class.</p>
-      <p class="purple">Here is some shadow text with the 'purple' class.</p>
-
+      <div ng-app="">
+        <button class="pill" ng-click="count = count + 1" ng-init="count=0">  Increment</button>
+        count: {{count}}
+        <p class="red">Here is some shadow text with the 'red' class.</p>
+        <p class="purple">Here is some shadow text with the 'purple' class.</p>
+      </div>
     </template>
     <span class="pill">Success</span>
     <p class="purple">Here is some host text with the 'purple' class defined in the shadow DOM.</p>
