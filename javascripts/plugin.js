@@ -1,5 +1,7 @@
-console.log(document.querySelector("button.pill"));
+(function () {
+  console.log(document.querySelector("button.pill"));
 
-document.querySelector("button.pill").addEventListener("click", function() {
-  console.log( 'hello');
+  document.querySelector("button.pill").addEventListener("click", function() {
+    console.log( 'hello');
+  });
 });
