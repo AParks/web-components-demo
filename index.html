@@ -33,7 +33,8 @@
         }
         /*.red { color: purple }*/
       </style>
-      <span ng-click="console.log('hello')" class="pill">Success</span>
+      <button class="pill" ng-click="count = count + 1" ng-init="count=0">
+      count: {{count}}
       <p class="red">Here is some shadow text with the 'red' class.</p>
       <p class="purple">Here is some shadow text with the 'purple' class.</p>
 
