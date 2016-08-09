@@ -1,3 +1,3 @@
-$("button.pill").on( "click", function() {
+$("button.pill")[0].addEventListener("click", function() {
   console.log( $( this ).text() );
 });
