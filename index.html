@@ -40,9 +40,14 @@
         <p class="purple">Here is some shadow text with the 'purple' class.</p>
       </div>
     </template>
-    <span class="pill">Success</span>
-    <p class="purple">Here is some host text with the 'purple' class defined in the shadow DOM.</p>
-    <p class="red">Here is some host text with the 'red' class.</p>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <div ng-app="">
+        <button class="pill" ng-click="count = count + 1" ng-init="count=0">  Increment</button>
+        count: {{count}}
+        <p class="purple">Here is some host text with the 'purple' class defined in the shadow DOM.</p>
+        <p class="red">Here is some host text with the 'red' class.</p>
+    </div>
     <p id="namespacedPlugin"></p>
   </body>
 </html>
