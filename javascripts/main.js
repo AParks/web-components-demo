@@ -54,6 +54,7 @@
               var url = '<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>';
               //shadowRoot.appendChild();
               var script = document.createElement('script');
+              script.src = url;
               this.appendChild(script);
         };
         
