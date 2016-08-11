@@ -30,33 +30,33 @@
               shadowRoot.appendChild(instance);
             }
         });*/
-        var proto = Object.create(HTMLElement.prototype, {
-          createdCallback: {
-              value: function() {
-                  var t = document.querySelector('#namespaced-plugin-template');
-                  //var clone = document.importNode(t.content, true);
-                  var shadowRoot = this.createShadowRoot();
-                  
-                  shadowRoot.innerHTML = '<div ng-app=""><button ng-click="count = count + 1" ng-init="count=0"> ng-click, increment count</button>count: {{count}}</div>';
-                  
-                  
-                    /*jQuery.ajax({
-                        url: "//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js",
-                        dataType: 'script',
-                        success: callback,
-                        async: true
-                    });*/
-                  //shadowRoot.appendChild();
-              
-                }
-          },
-           attachedCallback: function() {
+        var proto = Object.create(HTMLElement.prototype);
+        
+        proto.createdCallback = function() {
+          var t = document.querySelector('#namespaced-plugin-template');
+          //var clone = document.importNode(t.content, true);
+          var shadowRoot = this.createShadowRoot();
+          
+          shadowRoot.innerHTML = '<div ng-app=""><button ng-click="count = count + 1" ng-init="count=0"> ng-click, increment count</button>count: {{count}}</div>';
+          
+                        console.log('created');
+
+            /*jQuery.ajax({
+                url: "//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js",
+                dataType: 'script',
+                success: callback,
+                async: true
+            });*/
+          //shadowRoot.appendChild();
+      
+        };
+        proto.attachedCallback = function() {
               var script = '<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>';
               //shadowRoot.appendChild();
               document.write(script);
-              
-            }
-        });
+              console.log('attached');
+        };
+        
         document.registerElement('namespaced-plugin', {prototype: proto});
     }
     
