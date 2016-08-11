@@ -51,10 +51,10 @@
       
         };
         proto.attachedCallback = function() {
-              var script = '<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>';
+              var url = '<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>';
               //shadowRoot.appendChild();
-              document.write(script);
-              console.log('attached');
+              var script = document.createElement('script');
+              this.appendChild(script);
         };
         
         document.registerElement('namespaced-plugin', {prototype: proto});
