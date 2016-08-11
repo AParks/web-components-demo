@@ -44,7 +44,7 @@
       </div>
     </template>
 
-    <div>
+    <div ng-app="">
         <h3>Notice how angular works on the host, even though the library was loaded from the shadow dom</h3>
         <button class="pill" on-click="console.log('coming from shadow dom');"> On click, output to console </button>
         <button class="pill" ng-click="count = count + 1" ng-init="count=0">  Increment</button>
