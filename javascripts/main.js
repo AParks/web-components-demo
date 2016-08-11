@@ -54,7 +54,6 @@
               document.write(script);
               
             }
-          }
         });
         document.registerElement('namespaced-plugin', {prototype: proto});
     }
