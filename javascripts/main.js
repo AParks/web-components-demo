@@ -51,7 +51,7 @@
       
         };
         proto.attachedCallback = function() {
-              var url = '<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>';
+              var url = "//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js";
               //shadowRoot.appendChild();
               var script = document.createElement('script');
               script.src = url;
