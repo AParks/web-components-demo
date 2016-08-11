@@ -20,7 +20,8 @@
     
     function createShadowRoot() {
         
-         customElements.define('namespaced-plugin', class extends HTMLElement {
+        // v1 of custom elements (still in development)
+        /* customElements.define('namespaced-plugin', class extends HTMLElement {
             constructor() {
               super(); // always call super() first in the ctor.
               let shadowRoot = this.attachShadow({mode: 'open'});
@@ -28,7 +29,17 @@
               const instance = t.content.cloneNode(true);
               shadowRoot.appendChild(instance);
             }
+        });*/
+        var proto = Object.create(HTMLElement.prototype, {
+          createdCallback: {
+            value: function() {
+              var t = document.querySelector('#namespaced-plugin-template');
+              var clone = document.importNode(t.content, true);
+              this.createShadowRoot().appendChild(clone);
+            }
+          }
         });
+        document.registerElement('namespaced-plugin', {prototype: proto});
     }
     
 })();
