@@ -36,8 +36,8 @@
         /*.red { color: purple }*/
       </style>
       <div ng-app="">
-        <button class="pill" on-click="console.log('coming from shadow dom');"> On click, output to console </button>
-        <button ng-click="count = count + 1" ng-init="count=0">  Increment</button>
+        <button class="pill" on-click="console.log('coming from shadow dom');"> on-click, output to console </button>
+        <button ng-click="count = count + 1" ng-init="count=0"> ng-click, increment count</button>
         count: {{count}}
         <p class="red">Here is some shadow text with the 'red' class.</p>
         <p class="purple">Here is some shadow text with the 'purple' class.</p>
