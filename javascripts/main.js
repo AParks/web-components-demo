@@ -55,6 +55,8 @@
               //shadowRoot.appendChild();
               var script = document.createElement('script');
               script.src = url;
+              console.log(this.innerHTML);
+
               this.appendChild(script);
         };
         
