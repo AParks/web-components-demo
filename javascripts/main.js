@@ -31,15 +31,27 @@
             }
         });*/
         var proto = Object.create(HTMLElement.prototype, {
-          createdCallback: {
-            value: function() {
+          createdCallback: function() {
               var t = document.querySelector('#namespaced-plugin-template');
               //var clone = document.importNode(t.content, true);
               var shadowRoot = this.createShadowRoot();
               
-              shadowRoot.innerHTML = '<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script><div ng-app=""><button ng-click="count = count + 1" ng-init="count=0"> ng-click, increment count</button>count: {{count}}</div>';
+              shadowRoot.innerHTML = '<div ng-app=""><button ng-click="count = count + 1" ng-init="count=0"> ng-click, increment count</button>count: {{count}}</div>';
               
-              //shadowRoot.appendChild()
+              
+                jQuery.ajax({
+                    url: "//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js",
+                    dataType: 'script',
+                    success: callback,
+                    async: true
+                });
+              //shadowRoot.appendChild();
+              
+            },
+           attachedCallback: function() {
+              var script = '<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>';
+              //shadowRoot.appendChild();
+              document.write(script);
               
             }
           }
