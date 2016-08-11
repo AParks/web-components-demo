@@ -4,11 +4,7 @@
         && 'content' in document.createElement('template')) {
       // platform is good!
       window.onload = function() {
-          var shadow = createShadowRoot();
-          // import app styles
-          var style = document.createElement('style');
-          style.textContent = "@import 'stylesheets/stylesheet.css'";
-          shadow.insertBefore(style, shadow.childNodes[0]);
+          createShadowRoot();
         
       };
     } else {
@@ -18,23 +14,21 @@
       window.addEventListener('WebComponentsReady', function(e) {
           // imports are loaded and elements have been registered
           console.log('Components are ready');
-          var shadowRoot = createShadowRoot();
-          
-          // prevent plugin css from overwriting app-level css
-          // note: this doesnt prevent the opposite direction - app styles leaking into shadow dom
-          WebComponents.ShadowCSS.shimStyling( shadowRoot, '#namespacedPlugin' );
+          createShadowRoot();
       });
     }
     
     function createShadowRoot() {
-      // create shadow DOM on the <p> element above
-      var shadow = document.querySelector('#namespacedPlugin').createShadowRoot();
-      
-      // plugin HTML
-      var template = document.querySelector('.plugin-template');
-      shadow.appendChild(document.importNode(template.content, true)); // can also use shadow.innerHTML
-      
-      return shadow;
+        
+         customElements.define('namespaced-plugin', class extends HTMLElement {
+            constructor() {
+              super(); // always call super() first in the ctor.
+              let shadowRoot = this.attachShadow({mode: 'open'});
+              const t = document.querySelector('#namespaced-plugin-template');
+              const instance = t.content.cloneNode(true);
+              shadowRoot.appendChild(instance);
+            }
+        });
     }
     
 })();
