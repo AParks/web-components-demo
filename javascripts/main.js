@@ -34,8 +34,13 @@
           createdCallback: {
             value: function() {
               var t = document.querySelector('#namespaced-plugin-template');
-              var clone = document.importNode(t.content, true);
-              this.createShadowRoot().appendChild(clone);
+              //var clone = document.importNode(t.content, true);
+              var shadowRoot = this.createShadowRoot();
+              
+              shadowRoot.innerHTML = '<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script><div ng-app=""><button ng-click="count = count + 1" ng-init="count=0"> ng-click, increment count</button></div>';
+              
+              //shadowRoot.appendChild()
+              
             }
           }
         });
