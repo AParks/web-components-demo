@@ -55,9 +55,9 @@
               //shadowRoot.appendChild();
               var script = document.createElement('script');
               script.src = url;
-              console.log(this.innerHTML);
+              console.log(this.shadowRoot.innerHTML);
 
-              this.appendChild(script);
+              this.shadowRoot.appendChild(script);
         };
         
         document.registerElement('namespaced-plugin', {prototype: proto});
