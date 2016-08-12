@@ -1,0 +1,29 @@
+<link rel="import" href="../bower_components/polymer/polymer.html"> <!-- Import Polymer element -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script> <!-- Import d3 js -->
+
+<polymer-element name="my-custom-plugin" attributes="data">  <!-- Define your custom element -->
+<template>
+  <!-- Shadow CSS -->
+  <style type="text/css">
+    div.bar {
+      display: inline-block;
+      width: 50px;
+      height: 75px;
+      background: teal;
+      margin-right: 5px;
+    }
+  </style>
+
+  <!-- Shadow DOM -->
+  <div id="holder" ng-app></div>
+</template>
+
+<script>
+  Polymer("my-custom-plugin", {
+    ready: function() {   //ready() will be called once Polymer is ready and element is initilized 
+      console.log('hello');
+    },
+    data: [11, 35, 72, 9, 10] //default value for data array.
+  });
+</script>
+</polymer-element>
